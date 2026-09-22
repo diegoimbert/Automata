@@ -1,0 +1,14 @@
+description: OAuth access token for the LinkedIn API, covering member profile,
+  posts and marketing endpoints.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    token:
+      type: string
+      description: OAuth token
+      default: ''
+  required:
+    - token

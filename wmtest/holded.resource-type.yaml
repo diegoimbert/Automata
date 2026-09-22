@@ -1,0 +1,13 @@
+description: API key for the Holded API, authorizing access to invoicing,
+  contacts, projects, accounting and team data.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    apiKey:
+      type: string
+      description: API key generated from the Holded dashboard.
+  required:
+    - apiKey

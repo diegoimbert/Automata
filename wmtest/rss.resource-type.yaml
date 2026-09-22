@@ -1,0 +1,14 @@
+description: URL of an RSS 2.0 or Atom feed to fetch and parse.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    url:
+      type: string
+      description: Feed URL
+      default: ''
+      format: uri
+  required:
+    - url

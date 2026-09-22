@@ -1,0 +1,12 @@
+description: Credentials for the Basis Theory tokenization API using an application API key.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    apiKey:
+      type: string
+      description: API key retrieved upon creating an application.
+  required:
+    - apiKey

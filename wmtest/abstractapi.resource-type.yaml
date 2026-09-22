@@ -1,0 +1,18 @@
+description: >-
+  API key for one Abstract API product (IP geolocation, email/phone/VAT
+  validation, exchange rates, holidays) — each product has its own key.
+
+
+  Each product has its own endpoint and API key: head to the desired API page,
+  and copy the `Primary Key`.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    apiKey:
+      type: string
+      description: Key obtained from the dashboard page for each API product
+  required:
+    - apiKey

@@ -1,0 +1,18 @@
+description: API key and host for the Grist collaborative spreadsheet-database
+  API (docs.getgrist.com or your team site URL).
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    apiKey:
+      type: string
+      description: API key retrieved from the profile settings.
+    host:
+      type: string
+      description: Base URL of the API - for personal workspace, use docs.getgrist.com
+        and for team workspace, use team URL.
+  required:
+    - apiKey
+    - host

@@ -1,0 +1,13 @@
+description: Credentials for the Codat API using an encoded API key, to access
+  connected companies' accounting, banking and commerce data.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    encodedKey:
+      type: string
+      description: Encoded API key retrieved from the dashboard.
+  required:
+    - encodedKey

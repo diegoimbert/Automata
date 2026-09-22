@@ -1,0 +1,22 @@
+description: NetBox API URL and user API token for the NetBox network
+  infrastructure inventory (DCIM/IPAM) API.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  order:
+    - url
+    - token
+  properties:
+    token:
+      type: string
+      description: User API token
+      default: ''
+    url:
+      type: string
+      description: NetBox API URL
+      default: ''
+  required:
+    - url
+    - token

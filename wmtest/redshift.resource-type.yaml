@@ -1,0 +1,53 @@
+description: 'Connection settings for an Amazon Redshift (AWS) data warehouse:
+  host, port, database, user, password and SSL mode.'
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  order:
+    - host
+    - port
+    - dbname
+    - user
+    - password
+    - sslmode
+    - root_certificate_pem
+  properties:
+    dbname:
+      type: string
+      description: The database name
+    host:
+      type: string
+      description: The cluster or workgroup endpoint, without the port (e.g.
+        my-cluster.abc123.us-east-1.redshift.amazonaws.com)
+    password:
+      type: string
+      description: The Redshift user's password
+    port:
+      type: integer
+      description: The instance port
+      default: 5439
+    root_certificate_pem:
+      type: string
+      description: The root certificate in pem format, needed under verify-ca/verify-full
+      default: ''
+    sslmode:
+      type: string
+      description: Redshift requires SSL by default.
+      default: require
+      enum:
+        - disable
+        - allow
+        - prefer
+        - require
+        - verify-ca
+        - verify-full
+    user:
+      type: string
+      description: The Redshift username
+  required:
+    - host
+    - dbname
+    - user
+    - password

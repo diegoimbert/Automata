@@ -1,0 +1,13 @@
+description: Credentials for the ReadMe API using an API key, to manage a ReadMe
+  documentation project.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft-07/schema#
+  type: object
+  properties:
+    apiKey:
+      type: string
+      description: API key retrieved from the dashboard.
+  required:
+    - apiKey

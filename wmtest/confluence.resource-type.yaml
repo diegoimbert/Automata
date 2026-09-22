@@ -1,0 +1,23 @@
+description: Confluence Cloud credentials. Authenticate with an Atlassian
+  account email and an API token (HTTP Basic auth) against your site base URL.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    apiToken:
+      type: string
+      description: API token for your Atlassian account. Create one at
+        https://id.atlassian.com/manage-profile/security/api-tokens
+    baseUrl:
+      type: string
+      description: Base URL of your Confluence Cloud site, e.g.
+        https://your-domain.atlassian.net (no trailing slash, no /wiki).
+    email:
+      type: string
+      description: Email of the Atlassian account used to authenticate.
+  required:
+    - email
+    - apiToken
+    - baseUrl

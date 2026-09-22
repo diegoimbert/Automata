@@ -1,0 +1,13 @@
+description: Airtable API key or personal access token, sent as a bearer token
+  to the Airtable REST API.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    apiKey:
+      type: string
+      description: ''
+      default: keyXXXXXXXXXXXXXX
+  required: []

@@ -1,0 +1,26 @@
+description: Docusign OAuth Authorization Code credential. The token is
+  populated by Windmill's OAuth flow; account_id and base_uri pin the API
+  endpoint to a specific Docusign account.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    account_id:
+      type: string
+      description: API Account ID (GUID). Visible at
+        https://admindemo.docusign.com/apps-and-keys under 'My Account
+        Information'.
+    base_uri:
+      type: string
+      description: Account base URI without trailing /restapi, e.g.
+        https://demo.docusign.net (sandbox) or https://na3.docusign.net
+        (production).
+    token:
+      type: string
+      description: OAuth access token. Populated by Windmill's OAuth flow.
+  required:
+    - token
+    - account_id
+    - base_uri

@@ -1,0 +1,20 @@
+display_name: Google Workspace
+description: >-
+  Google OAuth token authorizing Google Workspace APIs (Admin SDK, Google Drive,
+  Google Calendar).
+
+
+  See the list of Admin SDK APIs the token can be scoped for:
+  https://developers.google.com/admin-sdk/admin-api-list
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    token:
+      type: string
+      description: OAuth token
+      default: ''
+  required:
+    - token

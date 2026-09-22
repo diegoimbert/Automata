@@ -1,0 +1,13 @@
+display_name: CA certificate
+description: PEM-encoded CA certificate used to verify a server's TLS certificate.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    certificate:
+      type: string
+      description: ''
+      default: ''
+  required: []

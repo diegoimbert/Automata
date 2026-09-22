@@ -1,0 +1,30 @@
+description: 'Discord application/bot credentials. Create an app at
+  https://discord.com/developers/applications. `bot_token` (Bot tab)
+  authenticates Discord REST calls (`Authorization: Bot <token>`) — sending
+  messages, managing threads, etc. `application_id` and `public_key` are on the
+  General Information page. `public_key` is the Ed25519 key Discord signs
+  interaction requests with — used ONLY to verify incoming interactions
+  (buttons, modals, slash commands), not for auth.'
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    application_id:
+      type: string
+      description: Application ID (= the bot's user ID), from General Information.
+      default: ''
+    bot_token:
+      type: string
+      description: 'Bot token from the Bot tab. Sent as `Authorization: Bot <token>`
+        for all REST calls. Secret — keep it out of `public_key`.'
+      default: ''
+      format: password
+    public_key:
+      type: string
+      description: Ed25519 Public Key from General Information. Used ONLY to verify
+        the signature on incoming interaction requests. NOT secret and NOT the
+        bot token.
+      default: ''
+  required: []

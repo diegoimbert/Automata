@@ -1,0 +1,47 @@
+description: 'A reusable AI agent: provider/model, system prompt and tools with
+  their default input bindings. Referenced by AI agent flow steps.'
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    max_completion_tokens:
+      type: number
+      description: Maximum output tokens.
+    max_iterations:
+      type: number
+      description: Max reasoning/tool-use loops.
+    memory:
+      type: object
+      description: 'How much history the agent sends with each request: {"kind":
+        "window", "context_length": N} keeps the last N messages, {"kind":
+        "off"} keeps none. Which memory is read is set per run or per step,
+        never on the agent.'
+    output_schema:
+      type: object
+      description: Structured-output JSON schema.
+      format: json-schema
+    output_type:
+      type: string
+      default: text
+      enum:
+        - text
+        - image
+    provider:
+      type: object
+      description: AI provider + model + credentials resource for the agent.
+      format: ai-provider
+    streaming:
+      type: boolean
+    system_prompt:
+      type: string
+      description: System prompt for the agent.
+    temperature:
+      type: number
+      description: Sampling temperature (0.0-2.0).
+    tools:
+      type: array
+      description: Reusable tool definitions available to the agent.
+  required:
+    - provider

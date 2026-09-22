@@ -1,0 +1,30 @@
+description: Credentials for Azure AI Foundry. Serves OpenAI models and
+  OpenAI-compatible models (DeepSeek, Llama, Mistral, Phi) as well as Anthropic
+  (Claude) models, each on its own API path.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  order:
+    - base_url
+    - api_key
+  properties:
+    api_key:
+      type: string
+      description: API key for the Azure AI Foundry resource.
+      default: ''
+      nullable: false
+      password: true
+    base_url:
+      type: string
+      description: 'Foundry resource root URL, e.g.
+        https://<YOUR_RESOURCE_NAME>.services.ai.azure.com (not the
+        /api/projects/... project endpoint). Windmill appends the correct API
+        path per model: /openai/v1 for OpenAI-compatible models and
+        /anthropic/v1 for Claude models.'
+      default: ''
+      nullable: false
+  required:
+    - base_url
+    - api_key

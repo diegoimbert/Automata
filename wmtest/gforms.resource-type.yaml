@@ -1,0 +1,13 @@
+display_name: Google Forms
+description: Google OAuth2 access token authorizing the Google Forms API.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    token:
+      type: string
+      description: Google OAuth2 token
+  required:
+    - token

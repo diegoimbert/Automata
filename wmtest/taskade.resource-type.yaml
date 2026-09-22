@@ -1,0 +1,12 @@
+description: Personal access token for the Taskade API, authorizing management
+  of workspaces, folders, projects and tasks.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    token:
+      type: string
+  required:
+    - token

@@ -1,0 +1,24 @@
+display_name: Sensor Tower
+description: API auth token and base URL for the Sensor Tower API, providing
+  mobile app market intelligence and download/revenue estimates.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  order:
+    - base_url
+    - auth_token
+  properties:
+    auth_token:
+      type: string
+      description: API authentication token
+      default: ''
+      password: true
+    base_url:
+      type: string
+      description: Endpoint of the API server
+      default: https://api.sensortower.com
+      nullable: false
+  required:
+    - base_url

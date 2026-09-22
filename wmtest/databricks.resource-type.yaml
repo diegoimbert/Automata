@@ -1,0 +1,27 @@
+description: Databricks workspace credential. Uses a personal access token (PAT)
+  for authentication against a specific workspace deployment.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    http_path:
+      type: string
+      description: HTTP path of the SQL warehouse or cluster to run against, e.g.
+        /sql/1.0/warehouses/a1b2c3d4e5f6. Found under the compute resource's
+        Connection details. Required by dbt; not needed by the REST API.
+    token:
+      type: string
+      description: Personal access token. Generate one under User Settings > Developer
+        > Access tokens, or at
+        https://<workspace_url>/settings/user/developer/access-tokens.
+    workspace_url:
+      type: string
+      description: Workspace deployment URL, e.g.
+        https://dbc-a1b2c3d4-e5f6.cloud.databricks.com (AWS),
+        https://adb-1234567890123456.7.azuredatabricks.net (Azure), or
+        https://1234567890123456.7.gcp.databricks.com (GCP). No trailing slash.
+  required:
+    - workspace_url
+    - token

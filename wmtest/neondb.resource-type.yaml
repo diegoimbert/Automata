@@ -1,0 +1,13 @@
+description: Credentials for the Neon API using an API key, for managing
+  Postgres projects, branches and compute endpoints.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    apiKey:
+      type: string
+      description: API Key generated from the account settings of NeonDB console.
+  required:
+    - apiKey

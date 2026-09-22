@@ -1,0 +1,36 @@
+description: >-
+  Credentials for the Coupa Core API (business spend management): your Coupa
+  instance URL and an OAuth2 access token.
+
+
+  Connect via Windmill's OAuth: pick Coupa under 'Others', enter your instance
+  name and the id/secret of an OAuth2/OpenID Connect client (Coupa: Setup >
+  Integrations > OAuth2/OpenID Connect Clients, grant type 'Client credentials',
+  granted the core.* scopes you need). Windmill exchanges and refreshes the
+  access token for you and fills in the token and instance URL.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  order:
+    - instance_url
+    - token
+  properties:
+    instance_url:
+      type: string
+      description: Base URL of your Coupa instance, e.g.
+        https://yourcompany.coupahost.com (or .coupacloud.com for partner/demo
+        instances). Filled automatically when you connect via Windmill's OAuth.
+        No trailing slash.
+      default: ''
+      placeholder: https://yourcompany.coupahost.com
+    token:
+      type: string
+      description: OAuth access token, written and refreshed automatically by
+        Windmill's OAuth (client credentials) connection.
+      default: ''
+      password: true
+  required:
+    - instance_url
+    - token

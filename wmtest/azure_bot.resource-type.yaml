@@ -1,0 +1,33 @@
+description: >-
+  Microsoft Azure Bot Service app ID, password and tenant ID, authorizing the
+  Bot Framework REST API used by Microsoft Teams bots.
+
+
+  Register a bot at https://portal.azure.com (Azure Bot resource) and create a
+  client secret on the underlying App Registration. Required to call the Bot
+  Framework REST API for proactive messages, replies, and adaptive cards.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    app_id:
+      type: string
+      description: Microsoft App ID (Application (client) ID of the Azure Bot's App
+        Registration)
+      default: ''
+    app_password:
+      type: string
+      description: Client secret value for the App Registration
+      default: ''
+      format: password
+    tenant_id:
+      type: string
+      description: Azure AD tenant ID. Set only when the Azure Bot is configured as
+        Single Tenant; leave empty for Multi Tenant bots so the multi-tenant Bot
+        Framework token endpoint is used.
+      default: ''
+  required:
+    - app_id
+    - app_password

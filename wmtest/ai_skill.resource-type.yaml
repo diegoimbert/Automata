@@ -1,0 +1,10 @@
+description: A reusable instruction set for the AI chat, in the SKILL.md format.
+  The resource description is what the assistant sees when deciding whether the
+  skill applies; the file body is the instructions it follows.
+format_extension: null
+is_fileset: false
+schema:
+  type: object
+  properties:
+    content:
+      type: string

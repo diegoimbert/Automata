@@ -1,0 +1,12 @@
+description: Credentials for the Cohere API (chat, embeddings, rerank) using an API key.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    apiKey:
+      type: string
+      description: API key generated from Cohere dashboard.
+  required:
+    - apiKey

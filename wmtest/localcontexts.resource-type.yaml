@@ -1,0 +1,33 @@
+description: Hub URL, project ID and API key for the Local Contexts Hub API,
+  supporting Indigenous cultural authority over heritage data.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  order:
+    - server_url
+    - api_key
+    - project_id
+  properties:
+    api_key:
+      type: string
+      description: ''
+      default: ''
+      nullable: false
+      password: true
+    project_id:
+      type: string
+      description: ''
+      default: ''
+      nullable: false
+    server_url:
+      type: string
+      description: ''
+      default: https://localcontextshub.org/api/
+      nullable: false
+      placeholder: ''
+  required:
+    - server_url
+    - api_key
+    - project_id

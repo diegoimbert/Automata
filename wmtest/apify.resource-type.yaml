@@ -1,0 +1,18 @@
+description: Apify OAuth token authorizing the Apify API for running
+  web-scraping actors, tasks and datasets.
+format_extension: null
+is_fileset: false
+schema:
+  type: object
+  order:
+    - token
+  properties:
+    token:
+      type: string
+      description: Apify OAuth token. Available only on Windmill Cloud.
+      default: ''
+      nullable: false
+      password: true
+      title: Apify OAuth Token
+  required:
+    - token

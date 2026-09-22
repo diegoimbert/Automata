@@ -1,0 +1,20 @@
+description: >-
+  PagerDuty Events API v2 routing (integration) key for triggering,
+  acknowledging and resolving alerts on a service.
+
+
+  The routing key is the only credential the Events API needs, and is sent in
+  the request body rather than a header. Find it on the service's Integrations
+  tab: https://support.pagerduty.com/docs/services-and-integrations
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    routing_key:
+      type: string
+      description: 32-character Events API v2 integration/routing key from the
+        service's Integrations tab.
+  required:
+    - routing_key

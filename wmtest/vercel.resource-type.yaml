@@ -1,0 +1,11 @@
+description: Credentials for the Vercel REST API using an account or team access token.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    token:
+      type: string
+  required:
+    - token

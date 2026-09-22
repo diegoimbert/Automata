@@ -1,0 +1,20 @@
+description: Credentials for the Meteosource weather API using an API key and
+  subscription tier.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft-07/schema#
+  type: object
+  properties:
+    apiKey:
+      type: string
+      description: Token for X-API-Key header authentication
+    tier:
+      type: string
+      description: API tier level
+      enum:
+        - free
+        - standard
+  required:
+    - apiKey
+    - tier

@@ -1,0 +1,41 @@
+description: >-
+  Auth0 Machine-to-Machine client ID and secret, exchanged for a token to call
+  the Auth0 Management API on your tenant domain.
+
+
+  Create a Machine-to-Machine application in your Auth0 dashboard, authorize it
+  for the Auth0 Management API, and grant the scopes your scripts need (e.g.
+  read:users, create:users). Scripts exchange client_id + client_secret for a
+  short-lived Management API token on each run (client-credentials grant).
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  order:
+    - domain
+    - client_id
+    - client_secret
+  properties:
+    client_id:
+      type: string
+      description: Client ID of the Machine-to-Machine application authorized for the
+        Auth0 Management API.
+      default: ''
+    client_secret:
+      type: string
+      description: Client secret of the Machine-to-Machine application authorized for
+        the Auth0 Management API.
+      default: ''
+      password: true
+    domain:
+      type: string
+      description: Your Auth0 tenant domain, e.g. your-tenant.us.auth0.com or
+        your-tenant.eu.auth0.com (no scheme, no trailing slash). Use a custom
+        domain only if your Management API tokens are issued for it.
+      default: ''
+      placeholder: your-tenant.us.auth0.com
+  required:
+    - domain
+    - client_id
+    - client_secret

@@ -1,0 +1,32 @@
+description: WhatsApp Business Cloud API credentials (Meta Graph API)
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    api_version:
+      type: string
+      description: Graph API version to use, e.g. 'v25.0' (optional, defaults to v25.0)
+    business_account_id:
+      type: string
+      description: WhatsApp Business Account (WABA) ID, used for template and phone
+        number management. Found in the app dashboard under WhatsApp > API Setup
+    phone_number_id:
+      type: string
+      description: ID of the WhatsApp business phone number used to send messages (not
+        the phone number itself). Found in the app dashboard under WhatsApp >
+        API Setup
+    token:
+      type: string
+      description: Permanent access token of a Meta Business System User with
+        whatsapp_business_messaging and whatsapp_business_management
+        permissions. Create it in Meta Business Settings > Users > System Users
+        (https://business.facebook.com/settings/system-users), or use a
+        temporary token from the app dashboard
+        (https://developers.facebook.com/apps > WhatsApp > API Setup) for
+        testing
+  required:
+    - token
+    - phone_number_id
+    - business_account_id

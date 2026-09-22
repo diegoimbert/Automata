@@ -1,0 +1,22 @@
+description: Strale API credentials. Strale is a quality-tested data layer for
+  AI agents providing 290+ capabilities (company verification, compliance
+  screening, VAT validation, invoice extraction, and more). Get your API key at
+  https://strale.dev
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  order:
+    - api_key
+    - base_url
+  properties:
+    api_key:
+      type: string
+      description: Strale API key (starts with sk_live_ or sk_test_)
+    base_url:
+      type: string
+      description: Strale API base URL
+      default: https://api.strale.io
+  required:
+    - api_key

@@ -1,0 +1,31 @@
+description: Anthropic API key for the Claude models, on the standard API or on
+  Anthropic models hosted on Google Vertex AI.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  order:
+    - apiKey
+    - base_url
+    - platform
+  properties:
+    apiKey:
+      type: string
+      description: ''
+      default: ''
+    base_url:
+      type: string
+      description: 'Optional. Only needed to overwrite the default base URL. For
+        google_vertex_ai:
+        https://{region}-aiplatform.googleapis.com/v1/projects/{project_id}/locations/{region}/publishers/anthropic/models/'
+      default: ''
+    platform:
+      type: string
+      description: Platform to use for Anthropic API.
+      default: standard
+      enum:
+        - standard
+        - google_vertex_ai
+  required:
+    - apiKey

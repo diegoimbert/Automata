@@ -1,0 +1,33 @@
+description: >-
+  Amazon S3 (AWS) bucket accessed by assuming an IAM role through Windmill's
+  OIDC integration: bucket, region and role ARN.
+
+
+  Set up the trust between AWS and Windmill first:
+  https://www.windmill.dev/docs/core_concepts/oidc#use-oidc-with-aws
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  order:
+    - bucket
+    - roleArn
+    - region
+  properties:
+    bucket:
+      type: string
+      description: ''
+      default: ''
+    region:
+      type: string
+      description: ''
+      default: ''
+    roleArn:
+      type: string
+      description: ''
+      default: ''
+  required:
+    - bucket
+    - region
+    - roleArn

@@ -1,0 +1,19 @@
+description: Credentials for the Pinecone vector database using an API key and
+  its environment.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    apiKey:
+      type: string
+      description: ''
+      default: ''
+    environment:
+      type: string
+      description: ''
+      default: ''
+  required:
+    - apiKey
+    - environment

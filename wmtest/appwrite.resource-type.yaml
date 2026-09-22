@@ -1,0 +1,33 @@
+description: >-
+  Server endpoint, project ID and API key for an Appwrite project's
+  backend-as-a-service REST API.
+
+
+  See the Appwrite docs for where to find the endpoint, project ID and API key:
+  https://appwrite.io/docs
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    endpoint:
+      type: string
+      description: url of your appwrite server
+      default: https://
+    key:
+      type: string
+      description: API key of your appwrite project
+      default: ''
+    project:
+      type: string
+      description: ID of your appwrite project
+      default: ''
+    self_signed:
+      type: boolean
+      description: use self signed certificates on server (only for development)
+      default: ''
+  required:
+    - endpoint
+    - project
+    - key

@@ -1,0 +1,18 @@
+description: PodPDF API key. Get one at https://app.podpdf.com -> Settings ->
+  API Keys. Turn HTML, Markdown, URLs and templates into PDFs with the PodPDF
+  API.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  order:
+    - api_key
+  properties:
+    api_key:
+      type: string
+      description: API key from https://app.podpdf.com -> Settings -> API Keys (sent
+        as the X-API-Key header).
+      password: true
+  required:
+    - api_key

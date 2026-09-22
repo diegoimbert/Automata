@@ -1,0 +1,30 @@
+description: Credentials for the Cloudflare API using an API token, with the account ID.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  order:
+    - token
+    - account_id
+    - email
+    - key
+  properties:
+    account_id:
+      type: string
+      description: ''
+      default: ''
+    email:
+      type: string
+      description: deprecated
+      default: ''
+    key:
+      type: string
+      description: deprecated
+      default: ''
+    token:
+      type: string
+      description: ''
+      default: ''
+  required:
+    - token

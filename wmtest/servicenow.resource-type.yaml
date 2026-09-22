@@ -1,0 +1,39 @@
+description: 'ServiceNow instance credential: the instance URL plus either Basic
+  auth (username + password) or an OAuth 2.0 bearer token.'
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  order:
+    - instance_url
+    - username
+    - password
+    - token
+  properties:
+    instance_url:
+      type: string
+      description: Instance base URL, e.g. https://dev12345.service-now.com (no
+        trailing slash). Every REST call is made against this host.
+      default: ''
+      placeholder: https://dev12345.service-now.com
+    password:
+      type: string
+      description: Basic auth password. Leave blank when using an OAuth bearer token.
+      default: ''
+      password: true
+    token:
+      type: string
+      description: OAuth 2.0 access token (Bearer). Populated automatically when you
+        connect via Windmill's ServiceNow OAuth flow (admin configures the
+        instance + client id/secret in instance settings), or paste one
+        manually. Provide this instead of username/password to authenticate with
+        OAuth.
+      default: ''
+      password: true
+    username:
+      type: string
+      description: Basic auth username. Leave blank when using an OAuth bearer token.
+      default: ''
+  required:
+    - instance_url

@@ -1,0 +1,17 @@
+description: API URL, xc-token, workspace and table identifying a table in
+  NocoDB, the open-source no-code database platform.
+format_extension: null
+is_fileset: false
+schema:
+  type: object
+  additionalProperties: false
+  properties:
+    apiUrl:
+      type: string
+    table:
+      type: string
+    workspace:
+      type: string
+    xc_token:
+      type: string
+  required: []

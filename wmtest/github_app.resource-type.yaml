@@ -1,0 +1,30 @@
+description: GitHub App credentials (app ID, private key and installation ID)
+  used to authenticate as an app installation.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  order:
+    - app_id
+    - private_key
+    - installation_id
+  properties:
+    app_id:
+      type: string
+      description: ''
+      default: ''
+      nullable: false
+    installation_id:
+      type: string
+      description: ''
+      default: ''
+    private_key:
+      type: string
+      description: ''
+      default: ''
+      nullable: false
+      password: true
+  required:
+    - app_id
+    - private_key

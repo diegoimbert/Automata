@@ -1,0 +1,15 @@
+description: 'A dbt connection: one entry of a profiles.yml ''outputs'' map,
+  exactly as dbt reads it. Paste the block from a working profiles.yml — its
+  ''type'' names the adapter and every other key is handed to that adapter
+  unchanged, so any adapter dbt supports works, including ones with no dedicated
+  Windmill resource type. Example: {"type": "clickhouse", "host": "ch.internal",
+  "port": 8123, "user": "analytics", "password": "$var:u/alice/ch_password",
+  "schema": "marts", "secure": true}. Numbers and booleans keep their type, and
+  $var:/$res: references resolve. One key is Windmill''s own:
+  ''root_certificate_pem'' is written next to profiles.yml and pointed at by
+  ''sslrootcert'' rather than sent as a value.'
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object

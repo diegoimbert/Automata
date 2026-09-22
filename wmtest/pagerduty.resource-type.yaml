@@ -1,0 +1,23 @@
+description: 'PagerDuty REST API credential. The token is a PagerDuty API access
+  key sent as `Authorization: Token token=...`. from_email is the login email of
+  a valid PagerDuty user, required as the `From` header by account-scoped
+  (general access) keys on incident write actions (create incident, add note,
+  some updates).'
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    from_email:
+      type: string
+      description: Login email of a valid PagerDuty user. Sent as the `From` header on
+        incident write actions; required when using an account-scoped (general
+        access) API key, ignored for user-scoped keys.
+    token:
+      type: string
+      description: PagerDuty REST API key. Create one under Integrations → API Access
+        Keys (account-scoped) or My Profile → User Settings → Create API User
+        Token (user-scoped). https://support.pagerduty.com/docs/api-access-keys
+  required:
+    - token

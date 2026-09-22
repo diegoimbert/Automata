@@ -1,0 +1,12 @@
+description: API key for the Beamer API, authorizing access to changelog posts,
+  comments, reactions and feature requests.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    apiKey:
+      type: string
+  required:
+    - apiKey

@@ -1,0 +1,34 @@
+description: API key for Google AI (Gemini), optionally pointed at Vertex AI via
+  the platform and base URL fields.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  order:
+    - api_key
+    - base_url
+    - platform
+  properties:
+    api_key:
+      type: string
+      description: ''
+      default: ''
+      nullable: false
+      password: true
+    base_url:
+      type: string
+      description: 'Optional. Only needed to overwrite the default base URL. For
+        google_vertex_ai:
+        https://{region}-aiplatform.googleapis.com/v1/projects/{project_id}/locations/{region}/publishers/google/models/'
+      default: ''
+    platform:
+      type: string
+      description: Platform to use. 'standard' for Google AI, 'google_vertex_ai' for
+        Vertex AI.
+      default: standard
+      enum:
+        - standard
+        - google_vertex_ai
+  required:
+    - api_key

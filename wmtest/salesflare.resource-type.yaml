@@ -1,0 +1,13 @@
+description: API key for the Salesflare CRM API, authorizing access to accounts,
+  contacts, opportunities, meetings and tasks.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    apiKey:
+      type: string
+      description: API key retrieved from the dashboard.
+  required:
+    - apiKey

@@ -1,0 +1,14 @@
+description: API token for the IPinfo (ipinfo.io) API, returning geolocation,
+  privacy detection and company data for an IP address.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    token:
+      type: string
+      description: API token
+      default: ''
+  required:
+    - token

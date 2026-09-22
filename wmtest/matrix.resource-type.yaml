@@ -1,0 +1,19 @@
+description: Matrix homeserver URL and optional user access token for the Matrix
+  client-server chat API.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    baseUrl:
+      type: string
+      description: The URL of a Matrix server, like "https://matrix.example.com"
+      default: ''
+    token:
+      type: string
+      description: An access token to act as a logged-in user. Leave this empty, if
+        you want to perform unauthenticated requests.
+      default: ''
+  required:
+    - baseUrl

@@ -1,0 +1,37 @@
+description: >-
+  Wiz service account credentials (OAuth 2.0 client credentials) for the Wiz
+  cloud security platform's GraphQL API.
+
+
+  Create a service account under Settings > Service Accounts in the Wiz portal,
+  then copy the Client ID, Client Secret and your tenant's GraphQL API endpoint.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    api_endpoint:
+      type: string
+      description: Tenant-specific GraphQL endpoint, e.g.
+        https://api.us1.app.wiz.io/graphql (the region is shown in the portal
+        under Settings > Service Accounts / API documentation).
+    audience:
+      type: string
+      description: OAuth token audience. Optional — defaults to wiz-api. Some older
+        tenants use beyond-api (check Settings > Service Accounts).
+    auth_url:
+      type: string
+      description: OAuth token endpoint. Optional — defaults to
+        https://auth.app.wiz.io/oauth/token (commercial). Gov tenants use
+        https://auth.gov.wiz.io/oauth/token.
+    client_id:
+      type: string
+      description: Service account Client ID from Settings > Service Accounts.
+    client_secret:
+      type: string
+      description: Service account Client Secret. Shown only once at creation.
+  required:
+    - client_id
+    - client_secret
+    - api_endpoint

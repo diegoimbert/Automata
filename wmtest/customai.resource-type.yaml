@@ -1,0 +1,31 @@
+description: Base URL, API key and custom headers for any OpenAI-compatible LLM
+  API endpoint (self-hosted or third-party).
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  order:
+    - api_key
+    - base_url
+    - headers
+  properties:
+    api_key:
+      type: string
+      description: ''
+      default: ''
+      password: true
+    base_url:
+      type: string
+      description: e.g. https://my.custom.provider/v1
+      default: ''
+      nullable: false
+      placeholder: ''
+    headers:
+      type: object
+      additionalProperties:
+        type: string
+      description: Custom HTTP headers to include in AI requests
+      default: {}
+  required:
+    - base_url

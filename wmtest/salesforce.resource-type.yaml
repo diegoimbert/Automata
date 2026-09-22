@@ -1,0 +1,25 @@
+description: Salesforce OAuth Authorization Code credential. The token is
+  populated by Windmill's OAuth flow; instance_url pins every REST call to the
+  org's data host, api_version selects the REST API version.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    api_version:
+      type: string
+      description: Salesforce REST API version path segment, e.g. v60.0. Optional —
+        scripts default to v60.0 when left blank.
+    instance_url:
+      type: string
+      description: Org data host returned in the OAuth token response, e.g.
+        https://acme.my.salesforce.com (production) or
+        https://acme--sandbox.sandbox.my.salesforce.com (sandbox). Every REST
+        call is made against this host, not login.salesforce.com.
+    token:
+      type: string
+      description: OAuth access token. Populated by Windmill's OAuth flow.
+  required:
+    - token
+    - instance_url

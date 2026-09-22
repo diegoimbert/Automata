@@ -1,0 +1,63 @@
+description: 'Connection settings for a PostgreSQL database: host, port,
+  database name, user, password and SSL/IAM auth options.'
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    accept_invalid_certs:
+      type: boolean
+      description: Accept any certificate presented by the server, which disables TLS
+        certificate verification and is not recommended. Only applies to
+        verify-ca/verify-full.
+      default: false
+      showExpr: fields.sslmode == 'verify-ca' || fields.sslmode == 'verify-full'
+    dbname:
+      type: string
+      description: The database name
+    host:
+      type: string
+      description: The instance host
+    options:
+      type: string
+      description: Startup options sent to the server (the libpq options parameter),
+        such as endpoint=<endpoint-id> for a Neon pooled or private connection,
+        or -c search_path=myschema
+    password:
+      type: string
+      description: The postgres users password
+    port:
+      type: integer
+      description: The instance port
+    region:
+      type: string
+      description: AWS region for IAM auth (e.g. us-east-1). Falls back to AWS_REGION
+        env var if not set.
+    root_certificate_pem:
+      type: string
+      description: The root certificate in pe format
+      default: ''
+    sslmode:
+      type: string
+      description: Most cloud databases (Heroku, AWS, Supabase, etc.) require SSL.
+        Self-hosted databases typically don't.
+      enum:
+        - disable
+        - allow
+        - prefer
+        - require
+        - verify-ca
+        - verify-full
+    use_iam_auth:
+      type: boolean
+      description: Use IAM authentication (AWS RDS/Aurora). When enabled, the password
+        field is ignored and a short-lived IAM token is generated instead.
+      default: false
+    user:
+      type: string
+      description: The postgres username
+  required:
+    - dbname
+    - user
+    - password

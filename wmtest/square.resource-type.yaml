@@ -1,0 +1,14 @@
+description: Square personal or OAuth access token authorizing the Square
+  payments and commerce API.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    token:
+      type: string
+      description: Either of personal access token or oauth access token.
+      default: ''
+  required:
+    - token

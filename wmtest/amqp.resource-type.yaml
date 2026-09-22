@@ -1,0 +1,51 @@
+description: Configuration settings for connecting to an AMQP 0-9-1 broker (e.g. RabbitMQ)
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  additionalProperties: false
+  description: Configuration settings for connecting to an AMQP 0-9-1 broker (e.g. RabbitMQ)
+  order:
+    - host
+    - port
+    - username
+    - password
+    - vhost
+    - tls
+  properties:
+    host:
+      type: string
+      description: The hostname or IP address of the AMQP broker (without the amqp://
+        prefix)
+      default: ''
+      examples:
+        - rabbitmq.example.com
+        - 192.168.1.100
+    password:
+      type: string
+      description: Password for broker authentication
+      format: password
+    port:
+      type: integer
+      description: The port number for the broker connection. Defaults to 5672 (amqp)
+        or 5671 when TLS is enabled (amqps)
+      examples:
+        - 5672
+        - 5671
+    tls:
+      type: boolean
+      description: Connect over TLS (amqps) instead of plaintext (amqp)
+      default: false
+    username:
+      type: string
+      description: Username for broker authentication
+    vhost:
+      type: string
+      description: The virtual host to connect to. Defaults to the broker's default
+        vhost (/)
+      examples:
+        - /
+  required:
+    - host
+  title: AMQP resource

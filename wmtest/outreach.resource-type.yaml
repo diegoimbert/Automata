@@ -1,0 +1,18 @@
+description: OAuth2 access token for the Outreach REST API (api.outreach.io).
+  Connect with OAuth so the token refreshes automatically — Outreach has no
+  long-lived API keys.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    token:
+      type: string
+      description: OAuth2 access token, filled automatically when you connect with
+        OAuth (recommended — tokens are refreshed for you). Pasting a token
+        minted from your own Outreach OAuth app
+        (https://developers.outreach.io/api/oauth/) also works but it expires
+        after 2 hours, so only do that for one-off testing.
+  required:
+    - token

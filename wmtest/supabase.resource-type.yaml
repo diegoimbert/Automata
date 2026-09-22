@@ -1,0 +1,21 @@
+description: |-
+  Supabase project URL and API key for the Supabase REST, auth and storage APIs.
+
+  Retrieve both values in "Project Settings -> API".
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    key:
+      type: string
+      description: The unique Supabase Key which is supplied when you create a new
+        project in your project dashboard.
+      default: ''
+    url:
+      type: string
+      description: The unique Supabase URL which is supplied when you create a new
+        project in your project dashboard.
+      default: ''
+  required: []

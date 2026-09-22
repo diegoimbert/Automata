@@ -1,0 +1,21 @@
+description: Adobe Acrobat Sign credential for the REST API v6. Provide a bearer
+  token in `token`; `base_uri` is optional and auto-discovered when left blank.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  properties:
+    base_uri:
+      type: string
+      description: Optional. Regional API access point for the account, e.g.
+        https://api.na1.adobesign.com (host only, no path). Leave blank to
+        auto-discover it on each call.
+    token:
+      type: string
+      description: 'Long-lived Integration Key, sent as `Authorization: Bearer`.
+        Create one in the Acrobat Sign admin under Account → Acrobat Sign API →
+        Integration Key (your account must have Acrobat Sign API access
+        enabled).'
+  required:
+    - token

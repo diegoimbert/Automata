@@ -1,0 +1,46 @@
+display_name: Snowflake (OAuth)
+description: "Connection to a Snowflake account through Windmill's Snowflake
+  OAuth: the account identifier and an access token Windmill refreshes, plus the
+  database, warehouse, role and schema to use."
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  order:
+    - account_identifier
+    - token
+    - database
+    - warehouse
+    - role
+    - schema
+  properties:
+    account_identifier:
+      type: string
+      description: <orgname>-<account_name>
+      default: ''
+    database:
+      type: string
+      description: Database to use. dbt requires one.
+      default: ''
+    role:
+      type: string
+      description: Role to use. The user's default role when empty.
+      default: ''
+    schema:
+      type: string
+      description: Schema to use.
+      default: ''
+    token:
+      type: string
+      description: OAuth access token, filled in and refreshed by Windmill's Snowflake
+        OAuth connection
+      default: ''
+      password: true
+    warehouse:
+      type: string
+      description: Warehouse to use. The user's default warehouse when empty.
+      default: ''
+  required:
+    - account_identifier
+    - token

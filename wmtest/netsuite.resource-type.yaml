@@ -1,0 +1,64 @@
+description: Oracle NetSuite account credential for the SuiteTalk REST API
+  (record API + SuiteQL). Always set account_id. Authenticate with EITHER
+  Token-Based Authentication (consumer_key + consumer_secret + token_id +
+  token_secret — tokens never expire, recommended for schedules) OR an OAuth 2.0
+  access token (token). Scripts send a Bearer header when token is set,
+  otherwise they sign each request with TBA (OAuth 1.0a HMAC-SHA256).
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  order:
+    - account_id
+    - consumer_key
+    - consumer_secret
+    - token_id
+    - token_secret
+    - token
+  properties:
+    account_id:
+      type: string
+      description: NetSuite account ID as it appears in your account-specific domain,
+        e.g. 1234567 or 1234567-sb1 for a sandbox (Setup > Company > Company
+        Information > Account ID). Used to build
+        https://<account_id>.suitetalk.api.netsuite.com.
+      default: ''
+      placeholder: '1234567'
+    consumer_key:
+      type: string
+      description: TBA consumer key of an integration record (Setup > Integration >
+        Manage Integrations, with Token-Based Authentication checked). Leave
+        blank when using an OAuth 2.0 token.
+      default: ''
+    consumer_secret:
+      type: string
+      description: TBA consumer secret of the integration record. Leave blank when
+        using an OAuth 2.0 token.
+      default: ''
+      password: true
+    token:
+      type: string
+      description: "OAuth 2.0 access token (Bearer). Populated automatically when you
+        connect via Windmill's NetSuite OAuth flow, or paste one manually.
+        Provide this instead of the TBA fields. Note: NetSuite OAuth 2.0 refresh
+        tokens are single-use and valid for 2 days by default (configurable up
+        to 30 days on the integration record), so a connection left unused
+        longer than that must be reconnected — prefer TBA for unattended
+        schedules."
+      default: ''
+      password: true
+    token_id:
+      type: string
+      description: TBA token ID of an access token (Setup > Users/Roles > Access
+        Tokens) created for the integration record. Leave blank when using an
+        OAuth 2.0 token.
+      default: ''
+    token_secret:
+      type: string
+      description: TBA token secret of the access token. Leave blank when using an
+        OAuth 2.0 token.
+      default: ''
+      password: true
+  required:
+    - account_id

@@ -1,0 +1,17 @@
+description: OAuth access token from Microsoft Entra ID (Azure AD) authorizing
+  Microsoft Azure REST APIs.
+format_extension: null
+is_fileset: false
+schema:
+  $schema: https://json-schema.org/draft/2020-12/schema
+  type: object
+  order:
+    - token
+  properties:
+    token:
+      type: string
+      description: AAD token for authentication
+      default: ''
+      password: true
+  required:
+    - token
